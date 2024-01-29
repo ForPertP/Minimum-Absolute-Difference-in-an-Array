@@ -24,7 +24,19 @@ class Result
 
     public static int minimumAbsoluteDifference(List<int> arr)
     {
+        arr.Sort();
+        int min = arr[1] - arr[0]; 
 
+        for (int i = 1; i < arr.Count - 1; ++i)
+        { 
+            int differ = arr[i+1] - arr[i];
+            if (differ < min)
+            {
+                min = differ; 
+            }
+        }
+
+        return min;
     }
 
 }
